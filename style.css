@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+.section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#section1 {
+  background-image: url('https://i.ibb.co/9g1hgm8/3-D-highly-upscaled-image-with-bright-colors-for-website-parallax-effect-2.jpg');
+}
+
+#section2 {
+  background-image: url('https://i.ibb.co/zXGpmWN/3-D-highly-upscaled-image-with-bright-colors-for-website-parallax-effect-3.jpg');
+}
+
+#section3 {
+  background-image: url('https://i.ibb.co/gtqC8FX/3-D-high-resolution-water-ripples-dynamic-and-serene-highly-upscaled-for-parallax-effect.jpg');
+}
+
+.overlay {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.parallax-image {
+  max-width: 50%;
+  border: 5px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.parallax-image:hover {
+  border-color: #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+/* Neon Hover Effect for Descriptions */
+.description {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease-in-out;
+}
+
+.description:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 1);
+  transform: scale(1.05);
+}
+
+.section:nth-child(even) .description:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8), 0 0 20px rgba(255, 0, 255, 1);
+}
+
+.portal-button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 20px;
+  color: #fff;
+  background-color: transparent;
+  border: 3px solid #00ffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.portal-button:hover {
+  background-color: #00ffff;
+  color: #000;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+/* Ensure particles fill the entire background */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+body {
+    margin: 0;
+    background: #1c1c1c; /* Dark background */
+    color: #ffffff; /* White text */
+}
+
+.login-container {
+    width: 100000%;
+    max-width: 400px;
+    margin: 100px auto;
+    background: rgba(123, 123, 123, 0.000001);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo-img {
+    width: 80%;
+    height: auto;
+}
+
+.logo-description {
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+.portfolio-info {
+    margin-top: 30px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent */
+    border-radius: 5px;
+}
+
+.portfolio-item {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #00aaff; /* Neon border */
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05); /* Slightly scale on hover */
+    box-shadow: 0 0 20px #00aaff, 0 0 30px #00aaff;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0088cc;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    .logo-description {
+        font-size: 0.9em; /* Smaller font on mobile */
+    }
+
+    .portfolio-info {
+        font-size: 0.75em;
+    }
+
+    /* Disable parallax effect on mobile for smoother performance */
+    .section {
+        background-attachment: scroll;
+    }
+}
+

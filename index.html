@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Effect with Neon Hover</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="section" id="section1">
+    <div class="overlay">
+      <img src="https://i.ibb.co/9g1hgm8/3-D-highly-upscaled-image-with-bright-colors-for-website-parallax-effect-2.jpg" alt="Image 1" class="parallax-image">
+      <p class="description">A journey of a thousand miles begins with a single step</p>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+    <div class="overlay">
+      <img src="https://i.ibb.co/zXGpmWN/3-D-highly-upscaled-image-with-bright-colors-for-website-parallax-effect-3.jpg" alt="Image 2" class="parallax-image">
+      <p class="description">Where passion meets purpose, greatness follows</p>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+    <div class="overlay">
+      <img src="https://i.ibb.co/gtqC8FX/3-D-high-resolution-water-ripples-dynamic-and-serene-highly-upscaled-for-parallax-effect.jpg" alt="Image 3" class="parallax-image">
+      <p class="description">Success is not a Destination, it's Journey</p>
+      
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard with Particles</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="login-container">
+        <div class="logo">
+            <img src="https://i.ibb.co/HP7MspV/Screenshot-2024-10-06-132746.png" alt="Logo" class="logo-img">
+            <p class="logo-description">WELCOME TO KMF'S WORKSPACE!<br>TOGETHER LET'S INNOVATE AND INSPIRE<br>MAY ALLAH BLESS US</p>
+            <p id="greetingMessage" style="display: none;"></p>
+        </div>
+
+        <!-- Portfolio Information Section -->
+        <div class="portfolio-info" id="portfolioInfo" style="display: none;">
+            <h2>Portfolio Information</h2>
+            <div id="employeeSelection" style="display: none;">
+                <label for="employeeSelect">Select Employee:</label>
+                <select id="employeeSelect" onchange="loadEmployeeData()">
+                    <option value="">--Select Employee--</option>
+                    <option value="employee1">KISH</option>
+                    <option value="employee2">ROSY</option>
+                </select>
+            </div>
+            <p class="portfolio-item" id="profitperhour">Profit Per Hour: $0</p>
+            <p class="portfolio-item" id="totalearnings">Total Earnings: $0</p>
+            <p class="portfolio-item" id="profitLoss">Profit/Loss: $0</p>
+            <p class="portfolio-item" id="withdrawableamount">Next Withdrawable Amount: $0</p>
+            <p class="portfolio-item" id="salaryStatus">Salary Status: Not Paid</p>
+            <p class="portfolio-item" id="nextSalaryDate">Next Salary Date: N/A</p>
+            <p class="portfolio-item" id="withdrawals">Number of Completed Withdrawals: 0</p>
+            <p class="portfolio-item" id="workingDays">Number of Working Days: 0</p>
+            <p class="portfolio-item" id="daysWorked">Number of Days Worked: 0</p>
+          <p class="portfolio-item"
+id="morningshift">morningshift: 0</p>   
+          <p class="portfolio-item"
+id="afternoonshift">afternoonshift: 0</p>
+          <p class="portfolio-item"
+id="nonworkingday">Next Non Working day: 0</p>
+            <button onclick="logout()">Logout</button>
+        </div>
+<!-- Login Box -->
+        <div class="login-box" id="loginBox">
+            <h2>Login</h2>
+            <div class="role-selection">
+                <label><input type="radio"      name="role" value="admin" checked> Admin</label>
+                <label><input type="radio"    name="role" value="employee"> Employee</label>
+            </div>
+            <div class="credentials">
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button onclick="login()">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Particles.js configuration
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00aaff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 5,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00aaff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+        });
+
+        // Admin and employee credentials
+        const adminCredentials = { username: 'kmf612', password: 'ishris1212+-' };
+        const employees = {
+            employee1: { username: 'k2024', password: 'kish7890', profitperhour: '0', totalearnings: '₹15040.42', profitLoss: 'TASK INCOMPLETE', withdrawableamount:'0', salaryStatus: 'Not Paid', nextSalaryDate: '14-10-2024', withdrawals: '0', workingDays: '6', daysWorked: '5',morningshift:'completed', afternoonshift:'not completed', nonworkingday: '0' },
+            employee2: { username: 'r2024', password: 'rosy7890', profitperhour: '0', totalearnings: '0', profitLoss: 'TASK INCOMPLETE', withdrawableamount:'0', salaryStatus: 'PENDING', nextSalaryDate: '14-10-2024', withdrawals: '0', workingDays: '1', daysWorked: '0',morningshift:'completed', afternoonshift:'not completed',nonworkingday: '0' }
+        };
+
+        function login() {
+            const role = document.querySelector('input[name=role]:checked').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+if (role === 'admin' && username === adminCredentials.username && password === adminCredentials.password) {
+                document.getElementById('loginBox').style.display = 'none';
+                document.getElementById('employeeSelection').style.display = 'block';
+                document.getElementById('portfolioInfo').style.display = 'block';
+            } else if (role === 'employee' && username === employees.employee1.username && password === employees.employee1.password) {
+                document.getElementById('loginBox').style.display = 'none';
+                document.getElementById('greetingMessage').innerText = 'Hi, KISH';
+                document.getElementById('greetingMessage').style.display = 'block';
+                displayEmployeeData(employees.employee1);
+            } else if (role === 'employee' && username === employees.employee2.username && password === employees.employee2.password) {
+                document.getElementById('loginBox').style.display = 'none';
+                document.getElementById('greetingMessage').innerText = 'Hi, ROSY';
+                document.getElementById('greetingMessage').style.display = 'block';
+                displayEmployeeData(employees.employee2);
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        }
+
+        function loadEmployeeData() {
+            const selectedEmployee = document.getElementById('employeeSelect').value;
+            if (selectedEmployee) {
+                displayEmployeeData(employees[selectedEmployee]);
+            }
+        }
+
+        function displayEmployeeData(employee) {
+            document.getElementById('portfolioInfo').style.display = 'block'; // Ensure it's visible
+            document.getElementById('profitperhour').innerText = 'Profit Per Hour: ' + employee.profitperhour;
+            document.getElementById('totalearnings').innerText = 'Total Earnings: ' + employee.totalearnings;
+            document.getElementById('profitLoss').innerText = 'Profit/Loss: ' + employee.profitLoss;
+            document.getElementById('withdrawableamount').innerText = 'Next Withdrawable Amount: ' + employee.withdrawableamount;
+            document.getElementById('salaryStatus').innerText = 'Salary Status: ' + employee.salaryStatus;
+            document.getElementById('nextSalaryDate').innerText = 'Next Salary Date: ' + employee.nextSalaryDate;
+            document.getElementById('withdrawals').innerText = 'Number of Completed Withdrawals: ' + employee.withdrawals;
+            document.getElementById('workingDays').innerText = 'Number of Working Days: ' + employee.workingDays;
+            document.getElementById('daysWorked').innerText = 'Number of Days Worked: ' + employee.daysWorked;
+          
+document.getElementById('morningshift').innerText = 'morning shift: ' + employee.morningshift;
+          
+document.getElementById('afternoonshift').innerText = 'afternoon shift: ' + employee.afternoonshift;
+document.getElementById('nonworkingday').innerText = 'Next Non Working Day: ' + employee.nonworkingday;          
+        }
+
+        function logout() {
+            document.getElementById('loginBox').style.display = 'block';
+            document.getElementById('portfolioInfo').style.display = 'none';
+            document.getElementById('employeeSelection').style.display = 'none';
+            document.getElementById('greetingMessage').style.display = 'none';
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('employeeSelect').value = '';
+        }
+    </script>
+</body>
+</html>
