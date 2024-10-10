@@ -62,6 +62,7 @@
                     <option value="employee2">ROSY</option>
                 </select>
             </div>
+            <p class="portfolio-item" id="date"> Today's Date: $0</p>
             <p class="portfolio-item" id="profitperhour">Profit Per Hour: $0</p>
             <p class="portfolio-item" id="totalearnings">Total Earnings: $0</p>
             <p class="portfolio-item" id="profitLoss">Profit/Loss: $0</p>
@@ -72,9 +73,9 @@
             <p class="portfolio-item" id="workingDays">Number of Working Days: 0</p>
             <p class="portfolio-item" id="daysWorked">Number of Days Worked: 0</p>
           <p class="portfolio-item"
-id="morningshift">morningshift: 0</p>   
+id="morningshift">Morningshift: 0</p>   
           <p class="portfolio-item"
-id="afternoonshift">afternoonshift: 0</p>
+id="afternoonshift">Afternoonshift: 0</p>
           <p class="portfolio-item"
 id="nonworkingday">Next Non Working day: 0</p>
             <button onclick="logout()">Logout</button>
@@ -170,8 +171,8 @@ id="nonworkingday">Next Non Working day: 0</p>
         // Admin and employee credentials
         const adminCredentials = { username: 'kmf612', password: 'ishris1212+-' };
         const employees = {
-            employee1: { username: 'ishris7890', password: 'k2024', profitperhour: '₹520.08', totalearnings: '₹23,611.44', profitLoss: '+₹2080.32', withdrawableamount:'₹23,611.44', salaryStatus: 'Not Requested', nextSalaryDate: '14-10-2024', withdrawals: '0', workingDays: '8', daysWorked: '7',morningshift:'completed', afternoonshift:'incomplete', nonworkingday: '13-10-2024' },
-            employee2: { username: 'shariqa', password: 'shariqa02', profitperhour: '₹260.04', totalearnings: '₹4680.72', profitLoss: '+₹1040.16', withdrawableamount:'₹4680.72', salaryStatus: 'Not Requested', nextSalaryDate: '14-10-2024', withdrawals: '0', workingDays: '3', daysWorked: '2',morningshift:'completed', afternoonshift:'incomplete',nonworkingday: '13-10-2024' }
+            employee1: { username: 'ishris7890', password: 'k2024', date: '10-10-2024', profitperhour: '₹520.08', totalearnings: '₹23,611.44', profitLoss: '+₹2080.32', withdrawableamount:'₹23,611.44', salaryStatus: 'Not Requested', nextSalaryDate: '14-10-2024', withdrawals: '0', workingDays: '8', daysWorked: '7',morningshift:'completed', afternoonshift:'incomplete', nonworkingday: '13-10-2024' },
+            employee2: { username: 'shariqa', password: 'shariqa02', date: '10-10-2024', profitperhour: '₹260.04', totalearnings: '₹4680.72', profitLoss: '+₹1040.16', withdrawableamount:'₹4680.72', salaryStatus: 'Not Requested', nextSalaryDate: '14-10-2024', withdrawals: '0', workingDays: '3', daysWorked: '2',morningshift:'completed', afternoonshift:'incomplete',nonworkingday: '13-10-2024' }
         };
 
         function login() {
