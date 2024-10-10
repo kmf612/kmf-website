@@ -62,7 +62,7 @@
                     <option value="employee2">ROSY</option>
                 </select>
             </div>
-            <p class="portfolio-item" id="date"> Today's Date: $0</p>
+            <p class="portfolio-item" id="date"> Today Date: $0</p>
             <p class="portfolio-item" id="profitperhour">Profit Per Hour: $0</p>
             <p class="portfolio-item" id="totalearnings">Total Earnings: $0</p>
             <p class="portfolio-item" id="profitLoss">Profit/Loss: $0</p>
@@ -207,7 +207,7 @@ if (role === 'admin' && username === adminCredentials.username && password === a
 
         function displayEmployeeData(employee) {
             document.getElementById('portfolioInfo').style.display = 'block'; // Ensure it's visible
-            document.getElementById('date').innerText = 'Today's Date: ' + employee.date;
+            document.getElementById('date').innerText = 'Today Date: ' + employee.date;
             document.getElementById('profitperhour').innerText = 'Profit Per Hour: ' + employee.profitperhour;
             document.getElementById('totalearnings').innerText = 'Total Earnings: ' + employee.totalearnings;
             document.getElementById('profitLoss').innerText = 'Profit/Loss: ' + employee.profitLoss;
