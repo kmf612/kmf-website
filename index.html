@@ -207,6 +207,7 @@ if (role === 'admin' && username === adminCredentials.username && password === a
 
         function displayEmployeeData(employee) {
             document.getElementById('portfolioInfo').style.display = 'block'; // Ensure it's visible
+            document.getElementById('date').innerText = 'Today's Date: ' + employee.date;
             document.getElementById('profitperhour').innerText = 'Profit Per Hour: ' + employee.profitperhour;
             document.getElementById('totalearnings').innerText = 'Total Earnings: ' + employee.totalearnings;
             document.getElementById('profitLoss').innerText = 'Profit/Loss: ' + employee.profitLoss;
@@ -217,9 +218,9 @@ if (role === 'admin' && username === adminCredentials.username && password === a
             document.getElementById('workingDays').innerText = 'Number of Working Days: ' + employee.workingDays;
             document.getElementById('daysWorked').innerText = 'Number of Days Worked: ' + employee.daysWorked;
           
-document.getElementById('morningshift').innerText = 'morning shift: ' + employee.morningshift;
+document.getElementById('morningshift').innerText = 'Morning shift: ' + employee.morningshift;
           
-document.getElementById('afternoonshift').innerText = 'afternoon shift: ' + employee.afternoonshift;
+document.getElementById('afternoonshift').innerText = 'Afternoon shift: ' + employee.afternoonshift;
 document.getElementById('nonworkingday').innerText = 'Next Non Working Day: ' + employee.nonworkingday;          
         }
 
