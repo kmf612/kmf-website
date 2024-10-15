@@ -65,6 +65,7 @@
             <p class="portfolio-item" id="date"> Today Date: $0</p>
             <p class="portfolio-item" id="profitperhour">Profit Per Hour: $0</p>
             <p class="portfolio-item" id="totalearnings">Total Earnings: $0</p>
+            <p class="portfolio-item" id="weeklyearnings">Weekly Earnings: $0</p>
             <p class="portfolio-item" id="profitLoss">Profit/Loss: $0</p>
             <p class="portfolio-item" id="withdrawableamount">Next Withdrawable Amount: $0</p>
             <p class="portfolio-item" id="salaryStatus">Salary Status: Not Paid</p>
@@ -171,8 +172,8 @@ id="nonworkingday">Next Non Working day: 0</p>
         // Admin and employee credentials
         const adminCredentials = { username: 'kmf612', password: 'ishris1212+-' };
         const employees = {
-            employee1: { username: 'ishris7890', password: 'k2024', date: '14-10-2024', profitperhour: '₹520.08', totalearnings: '₹34,013.04', profitLoss: '+₹3640.56', withdrawableamount:'₹3640.56', salaryStatus: ' Requested For (₹30,372.48)', nextSalaryDate: '21-10-2024', withdrawals: '0', workingDays: '11', daysWorked: '11',morningshift:'completed', afternoonshift:'completed', nonworkingday: '20-10-2024' },
-            employee2: { username: 'shariqa', password: 'shariqa02', date: '14-10-2024', profitperhour: '₹260.04', totalearnings: '₹9881.52', profitLoss: '+₹1820.28', withdrawableamount:'₹1820.28', salaryStatus: ' Requested For (₹8061.24)', nextSalaryDate: '21-10-2024', withdrawals: '0', workingDays: '6', daysWorked: '6',morningshift:'completed', afternoonshift:'completed',nonworkingday: '20-10-2024' }
+            employee1: { username: 'ishris7890', password: 'k2024', date: '15-10-2024', profitperhour: '₹520.08', totalearnings: '₹36,093.36',weeklyearnings: '₹5720.88', profitLoss: '+₹2080.32', withdrawableamount:'₹5720.88', salaryStatus: ' Requested For (₹30,372.48)', nextSalaryDate: '21-10-2024', withdrawals: '0', workingDays: '12', daysWorked: '11',morningshift:'completed', afternoonshift:'incomplete', nonworkingday: '20-10-2024' },
+            employee2: { username: 'shariqa', password: 'shariqa02', date: '15-10-2024', profitperhour: '₹260.04', totalearnings: '₹10,921.68', weeklyearnings: '₹2860.44', profitLoss: '+₹1040.16', withdrawableamount:'₹2860.44', salaryStatus: ' Requested For (₹8061.24)', nextSalaryDate: '21-10-2024', withdrawals: '0', workingDays: '7', daysWorked: '6',morningshift:'completed', afternoonshift:'incomplete',nonworkingday: '20-10-2024' }
         };
 
         function login() {
@@ -210,6 +211,7 @@ if (role === 'admin' && username === adminCredentials.username && password === a
             document.getElementById('date').innerText = 'Today Date: ' + employee.date;
             document.getElementById('profitperhour').innerText = 'Profit Per Hour: ' + employee.profitperhour;
             document.getElementById('totalearnings').innerText = 'Total Earnings: ' + employee.totalearnings;
+           document.getElementById('weekllyearnings').innerText = 'Weekly Earnings: ' + employee.weeklyearnings;
             document.getElementById('profitLoss').innerText = 'Profit/Loss: ' + employee.profitLoss;
             document.getElementById('withdrawableamount').innerText = 'Next Withdrawable Amount: ' + employee.withdrawableamount;
             document.getElementById('salaryStatus').innerText = 'Salary Status: ' + employee.salaryStatus;
@@ -217,11 +219,9 @@ if (role === 'admin' && username === adminCredentials.username && password === a
             document.getElementById('withdrawals').innerText = 'Number of Completed Withdrawals: ' + employee.withdrawals;
             document.getElementById('workingDays').innerText = 'Number of Working Days: ' + employee.workingDays;
             document.getElementById('daysWorked').innerText = 'Number of Days Worked: ' + employee.daysWorked;
-          
-document.getElementById('morningshift').innerText = 'Morning shift: ' + employee.morningshift;
-          
-document.getElementById('afternoonshift').innerText = 'Afternoon shift: ' + employee.afternoonshift;
-document.getElementById('nonworkingday').innerText = 'Next Non Working Day: ' + employee.nonworkingday;          
+            document.getElementById('morningshift').innerText = 'Morning shift: ' + employee.morningshift;
+            document.getElementById('afternoonshift').innerText = 'Afternoon shift: ' + employee.afternoonshift;
+            document.getElementById('nonworkingday').innerText = 'Next Non Working Day: ' + employee.nonworkingday;
         }
 
         function logout() {
