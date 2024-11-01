@@ -28,7 +28,7 @@
                 </select>
             </div>
             <!-- Portfolio Information Content -->
-            <p class="portfolio-item" id="date"> Today Date: $0</p>
+            <p class="portfolio-item" id="date">Today Date: $0</p>
             <p class="portfolio-item" id="profitperhour">Profit Per Hour: $0</p>
             <p class="portfolio-item" id="totalearnings">Total Earnings: $0</p>
             <p class="portfolio-item" id="weeklyearnings">Weekly Earnings: $0</p>
@@ -146,31 +146,31 @@
                 document.getElementById("loginBox").style.display = "none";
                 document.getElementById("portfolioInfo").style.display = "block";
                 document.getElementById("employeeSelection").style.display = "block";
-                document.getElementById("greetingMessage").textContent = "WELCOME BACK, ADMIN!";
+                document.getElementById("greetingMessage").textContent = `Welcome, Admin ${username}!`;
                 document.getElementById("greetingMessage").style.display = "block";
             } else if (role === 'employee') {
-                const employee = Object.values(employees).find(emp => emp.username === username && emp.password === password);
-                if (employee) {
-                    document.getElementById("loginBox").style.display = "none";
-                    document.getElementById("portfolioInfo").style.display = "block";
-                    document.getElementById("employeeSelection").style.display = "block";
-                    document.getElementById("greetingMessage").textContent = `WELCOME, ${username === 'ishris7890' ? 'KISH' : 'ROSY'}!`;
-                    document.getElementById("greetingMessage").style.display = "block";
-                } else {
-                    alert("Invalid employee credentials. Please try again.");
+                for (let employee in employees) {
+                    if (employees[employee].username === username && employees[employee].password === password) {
+                        document.getElementById("loginBox").style.display = "none";
+                        document.getElementById("portfolioInfo").style.display = "block";
+                        document.getElementById("employeeSelection").style.display = "none";
+                        document.getElementById("greetingMessage").textContent = `Welcome, Employee ${username}!`;
+                        document.getElementById("greetingMessage").style.display = "block";
+                        return;
+                    }
                 }
+                alert("Invalid employee credentials!");
             } else {
-                alert("Invalid admin credentials. Please try again.");
+                alert("Invalid admin credentials!");
             }
         }
 
         function logout() {
             document.getElementById("loginBox").style.display = "block";
             document.getElementById("portfolioInfo").style.display = "none";
-            document.getElementById("employeeSelection").style.display = "none";
             document.getElementById("greetingMessage").style.display = "none";
-            document.getElementById("username").value = '';
-            document.getElementById("password").value = '';
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
         }
     </script>
 </body>
