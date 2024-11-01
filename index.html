@@ -1,40 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KMF WEBSITE</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="section" id="section1">
-    <div class="overlay">
-      <img src="https://i.ibb.co/9g1hgm8/3-D-highly-upscaled-image-with-bright-colors-for-website-parallax-effect-2.jpg" alt="Image 1" class="parallax-image">
-      <p class="description">A journey of a thousand miles begins with a single step</p>
-    </div>
-  </div>
-
-  <div class="section" id="section2">
-    <div class="overlay">
-      <img src="https://i.ibb.co/zXGpmWN/3-D-highly-upscaled-image-with-bright-colors-for-website-parallax-effect-3.jpg" alt="Image 2" class="parallax-image">
-      <p class="description">Where passion meets purpose, greatness follows</p>
-    </div>
-  </div>
-
-  <div class="section" id="section3">
-    <div class="overlay">
-      <img src="https://i.ibb.co/gtqC8FX/3-D-high-resolution-water-ripples-dynamic-and-serene-highly-upscaled-for-parallax-effect.jpg" alt="Image 3" class="parallax-image">
-      <p class="description">Success is not a Destination, it's Journey</p>
-    </div>
-  </div>
-  
-  <script src="script.js"></script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard with Particles</title>
@@ -51,7 +17,6 @@
             <p id="greetingMessage" style="display: none;"></p>
         </div>
 
-        <!-- Portfolio Information Section -->
         <div class="portfolio-info" id="portfolioInfo" style="display: none;">
             <h2>Portfolio Information</h2>
             <div id="employeeSelection" style="display: none;">
@@ -62,6 +27,7 @@
                     <option value="employee2">ROSY</option>
                 </select>
             </div>
+            <!-- Portfolio Information Content -->
             <p class="portfolio-item" id="date"> Today Date: $0</p>
             <p class="portfolio-item" id="profitperhour">Profit Per Hour: $0</p>
             <p class="portfolio-item" id="totalearnings">Total Earnings: $0</p>
@@ -80,7 +46,6 @@
             <button onclick="logout()">Logout</button>
         </div>
 
-        <!-- Login Box -->
         <div class="login-box" id="loginBox">
             <h2>Login</h2>
             <div class="role-selection">
@@ -178,32 +143,34 @@
             const role = document.querySelector('input[name="role"]:checked').value;
 
             if (role === 'admin' && username === adminCredentials.username && password === adminCredentials.password) {
-                document.getElementById("greetingMessage").style.display = "block";
-                document.getElementById("greetingMessage").textContent = `Welcome, ${username}!`;
                 document.getElementById("loginBox").style.display = "none";
                 document.getElementById("portfolioInfo").style.display = "block";
                 document.getElementById("employeeSelection").style.display = "block";
-            } else {
+                document.getElementById("greetingMessage").textContent = "WELCOME BACK, ADMIN!";
+                document.getElementById("greetingMessage").style.display = "block";
+            } else if (role === 'employee') {
                 const employee = Object.values(employees).find(emp => emp.username === username && emp.password === password);
-                if (role === 'employee' && employee) {
-                    document.getElementById("greetingMessage").style.display = "block";
-                    document.getElementById("greetingMessage").textContent = `Welcome, ${username}!`;
+                if (employee) {
                     document.getElementById("loginBox").style.display = "none";
                     document.getElementById("portfolioInfo").style.display = "block";
-                    document.getElementById("employeeSelection").style.display = "none";
-                    loadEmployeeData();
+                    document.getElementById("employeeSelection").style.display = "block";
+                    document.getElementById("greetingMessage").textContent = `WELCOME, ${username === 'ishris7890' ? 'KISH' : 'ROSY'}!`;
+                    document.getElementById("greetingMessage").style.display = "block";
                 } else {
-                    alert("Invalid credentials. Please try again.");
+                    alert("Invalid employee credentials. Please try again.");
                 }
+            } else {
+                alert("Invalid admin credentials. Please try again.");
             }
         }
 
         function logout() {
-            document.getElementById("greetingMessage").style.display = "none";
             document.getElementById("loginBox").style.display = "block";
             document.getElementById("portfolioInfo").style.display = "none";
-            document.getElementById("username").value = "";
-            document.getElementById("password").value = "";
+            document.getElementById("employeeSelection").style.display = "none";
+            document.getElementById("greetingMessage").style.display = "none";
+            document.getElementById("username").value = '';
+            document.getElementById("password").value = '';
         }
     </script>
 </body>
