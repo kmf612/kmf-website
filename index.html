@@ -25,13 +25,13 @@
     <div class="overlay">
       <img src="https://i.ibb.co/gtqC8FX/3-D-high-resolution-water-ripples-dynamic-and-serene-highly-upscaled-for-parallax-effect.jpg" alt="Image 3" class="parallax-image">
       <p class="description">Success is not a Destination, it's Journey</p>
-      
     </div>
   </div>
   
   <script src="script.js"></script>
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,15 +76,16 @@
             <p class="portfolio-item" id="morningshift">Morningshift: 0</p>   
             <p class="portfolio-item" id="afternoonshift">Afternoonshift: 0</p>
             <p class="portfolio-item" id="nonworkingday">Next Non Working day: 0</p>
-            <p class="portfolio-item" id="oct2024">OCT 2024 EARNINGS: 0</p>
+            <p class="portfolio-item" id="oct-2024">OCT 2024 EARNINGS: 0</p>
             <button onclick="logout()">Logout</button>
         </div>
-<!-- Login Box -->
+
+        <!-- Login Box -->
         <div class="login-box" id="loginBox">
             <h2>Login</h2>
             <div class="role-selection">
-                <label><input type="radio"      name="role" value="admin" checked> Admin</label>
-                <label><input type="radio"    name="role" value="employee"> Employee</label>
+                <label><input type="radio" name="role" value="admin" checked> Admin</label>
+                <label><input type="radio" name="role" value="employee"> Employee</label>
             </div>
             <div class="credentials">
                 <input type="text" id="username" placeholder="Username">
@@ -164,106 +165,100 @@
                         "rotateY": 1200
                     }
                 }
-            },
+            }
         });
 
         // Admin and employee credentials
         const adminCredentials = { username: 'kmf612', password: 'ishris1212+-' };
         const employees = {
-            employee1: { username: 'ishris7890', password          : 'k2024',
-
-                                                 date              : '01-11-2024',
-                                                 profitperhour     : '₹520.08', 
-                                                 totalearnings     : '₹93,822.24',
-                                                 weeklyearnings    : '₹21,843.36', 
-                                                 profitLoss        : '+₹7281.12',
-                                                 withdrawableamount:'₹7281.12',
-                                                 salaryStatus      :'Requested For (86,541.12)', 
-                                                 nextSalaryDate    :'04-11-2024',
-                                                 withdrawals       :'0', 
-                                                 workingDays       :'27',
-                                                 daysWorked        :'27',
-                                                 morningshift      :'completed',
-                                                 afternoonshift    :'completed', 
-                                                 nonworkingday     :'03-11-2024',
-                                                 oct2024           :'86,541.12' },
-
-            employee2: { username: 'shariqa',    password          : 'shariqa02',
-
-                                                 date              : '01-11-2024', 
-                                                 profitperhour     :'₹260.04', 
-                                                 totalearnings     :'₹41,866.44', 
-                                                 weeklyearnings    :'₹10,921.68', 
-                                                 profitLoss        :'+₹3640.56', 
-                                                 withdrawableamount:'₹3640.56', 
-                                                salaryStatus       :'Requested For (38,225.88)', 
-                                                nextSalaryDate     :'04-11-2024', 
-                                                withdrawals        :'0', 
-                                                workingDays        :'22', 
-                                                daysWorked         :'22',
-                                                morningshift       :'completed', 
-                                                afternoonshift     :'completed',
-                                                nonworkingday      :'03-11-2024' ,
-                                                oct2024            :'38,225.88' },
+            employee1: {
+                username: 'kish',
+                password: 'kish7890',
+                date: '01-11-2024',
+                profitperhour: '₹520.08', 
+                totalearnings: '₹93,822.24',
+                weeklyearnings: '₹21,843.36', 
+                profitLoss: '+₹7281.12',
+                withdrawableamount: '₹7281.12',
+                salaryStatus: 'Requested For (86,541.12)', 
+                nextSalaryDate: '04-11-2024',
+                withdrawals: '0', 
+                workingDays: '27',
+                daysWorked: '27',
+                morningshift: 'completed',
+                afternoonshift: 'completed', 
+                nonworkingday: '03-11-2024',
+                oct_2024: '86,541.12'
+            },
+            employee2: {
+                username: 'shariqa',
+                password: 'shariqa02',
+                date: '01-11-2024', 
+                profitperhour: '₹260.04', 
+                totalearnings: '₹41,866.44', 
+                weeklyearnings: '₹10,921.68', 
+                profitLoss: '+₹3640.56', 
+                withdrawableamount: '₹3640.56', 
+                salaryStatus: 'Requested For (38,225.88)', 
+                nextSalaryDate: '04-11-2024', 
+                withdrawals: '0', 
+                workingDays: '22', 
+                daysWorked: '22',
+                morningshift: 'completed', 
+                afternoonshift: 'completed', 
+                nonworkingday: '03-11-2024', 
+                oct_2024: '38,225.88'
+            }
         };
 
-        function login() {
-            const role = document.querySelector('input[name=role]:checked').value;
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-if (role === 'admin' && username === adminCredentials.username && password === adminCredentials.password) {
-                document.getElementById('loginBox').style.display = 'none';
-                document.getElementById('employeeSelection').style.display = 'block';
-                document.getElementById('portfolioInfo').style.display = 'block';
-            } else if (role === 'employee' && username === employees.employee1.username && password === employees.employee1.password) {
-                document.getElementById('loginBox').style.display = 'none';
-                document.getElementById('greetingMessage').innerText = 'Hi, KISH';
-                document.getElementById('greetingMessage').style.display = 'block';
-                displayEmployeeData(employees.employee1);
-            } else if (role === 'employee' && username === employees.employee2.username && password === employees.employee2.password) {
-                document.getElementById('loginBox').style.display = 'none';
-                document.getElementById('greetingMessage').innerText = 'Hi, ROSY';
-                document.getElementById('greetingMessage').style.display = 'block';
-                displayEmployeeData(employees.employee2);
-            } else {
-                alert('Invalid credentials. Please try again.');
-            }
-        }
-
         function loadEmployeeData() {
-            const selectedEmployee = document.getElementById('employeeSelect').value;
-            if (selectedEmployee) {
-                displayEmployeeData(employees[selectedEmployee]);
+            const selectedEmployee = document.getElementById("employeeSelect").value;
+            if (selectedEmployee && employees[selectedEmployee]) {
+                const employeeData = employees[selectedEmployee];
+                document.getElementById("date").textContent = `Today Date: ${employeeData.date}`;
+                document.getElementById("profitperhour").textContent = `Profit Per Hour: ${employeeData.profitperhour}`;
+                document.getElementById("totalearnings").textContent = `Total Earnings: ${employeeData.totalearnings}`;
+                document.getElementById("weeklyearnings").textContent = `Weekly Earnings: ${employeeData.weeklyearnings}`;
+                document.getElementById("profitLoss").textContent = `Profit/Loss: ${employeeData.profitLoss}`;
+                document.getElementById("withdrawableamount").textContent = `Next Withdrawable Amount: ${employeeData.withdrawableamount}`;
+                document.getElementById("salaryStatus").textContent = `Salary Status: ${employeeData.salaryStatus}`;
+                document.getElementById("nextSalaryDate").textContent = `Next Salary Date: ${employeeData.nextSalaryDate}`;
+                document.getElementById("withdrawals").textContent = `Number of Completed Withdrawals: ${employeeData.withdrawals}`;
+                document.getElementById("workingDays").textContent = `Number of Working Days: ${employeeData.workingDays}`;
+                document.getElementById("daysWorked").textContent = `Number of Days Worked: ${employeeData.daysWorked}`;
+                document.getElementById("morningshift").textContent = `Morningshift: ${employeeData.morningshift}`;
+                document.getElementById("afternoonshift").textContent = `Afternoonshift: ${employeeData.afternoonshift}`;
+                document.getElementById("nonworkingday").textContent = `Next Non Working day: ${employeeData.nonworkingday}`;
+                document.getElementById("oct-2024").textContent = `OCT 2024 EARNINGS: ${employeeData.oct_2024}`;
             }
         }
-
-        function displayEmployeeData(employee) {
-            document.getElementById('portfolioInfo').style.display = 'block'; // Ensure it's visible
-            document.getElementById('date').innerText = 'Today Date: ' + employee.date;
-            document.getElementById('profitperhour').innerText = 'Profit Per Hour: ' + employee.profitperhour;
-            document.getElementById('totalearnings').innerText = 'Total Earnings: ' + employee.totalearnings;
-           document.getElementById('weeklyearnings').innerText = 'Weekly Earnings: ' + employee.weeklyearnings;
-            document.getElementById('profitLoss').innerText = 'Profit/Loss: ' + employee.profitLoss;
-            document.getElementById('withdrawableamount').innerText = 'Next Withdrawable Amount: ' + employee.withdrawableamount;
-            document.getElementById('salaryStatus').innerText = 'Salary Status: ' + employee.salaryStatus;
-            document.getElementById('nextSalaryDate').innerText = 'Next Salary Date: ' + employee.nextSalaryDate;
-            document.getElementById('withdrawals').innerText = 'Number of Completed Withdrawals: ' + employee.withdrawals;
-            document.getElementById('workingDays').innerText = 'Number of Working Days: ' + employee.workingDays;
-            document.getElementById('daysWorked').innerText = 'Number of Days Worked: ' + employee.daysWorked;
-            document.getElementById('morningshift').innerText = 'Morning shift: ' + employee.morningshift;
-            document.getElementById('afternoonshift').innerText = 'Afternoon shift: ' + employee.afternoonshift;
-            document.getElementById('nonworkingday').innerText = 'Next Non Working Day: ' + employee.nonworkingday;
-            document.getElementById('oct2024').innerText = 'OCT 2024 EARNINGS: ' + employee.oct2024;
+        
+        function logout() {
+            document.getElementById("loginBox").style.display = "block";
+            document.getElementById("portfolioInfo").style.display = "none";
         }
 
-        function logout() {
-            document.getElementById('loginBox').style.display = 'block';
-            document.getElementById('portfolioInfo').style.display = 'none';
-            document.getElementById('employeeSelection').style.display = 'none';
-            document.getElementById('greetingMessage').style.display = 'none';
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
-            document.getElementById('employeeSelect').value = '';
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const role = document.querySelector('input[name="role"]:checked').value;
+            if (role === "admin" && username === adminCredentials.username && password === adminCredentials.password) {
+                document.getElementById("loginBox").style.display = "none";
+                document.getElementById("portfolioInfo").style.display = "block";
+                document.getElementById("employeeSelection").style.display = "none";
+            } else {
+                const selectedEmployee = Object.keys(employees).find(employee => 
+                    employees[employee].username === username && employees[employee].password === password);
+                if (selectedEmployee) {
+                    document.getElementById("loginBox").style.display = "none";
+                    document.getElementById("portfolioInfo").style.display = "block";
+                    document.getElementById("employeeSelection").style.display = "block";
+                    document.getElementById("employeeSelect").value = selectedEmployee;
+                    loadEmployeeData();
+                } else {
+                    alert("Invalid username or password");
+                }
+            }
         }
     </script>
 </body>
