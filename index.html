@@ -76,7 +76,7 @@
             <p class="portfolio-item" id="morningshift">Morningshift: 0</p>   
             <p class="portfolio-item" id="afternoonshift">Afternoonshift: 0</p>
             <p class="portfolio-item" id="nonworkingday">Next Non Working day: 0</p>
-            <p class="portfolio-item" id="oct-2024">OCT 2024 EARNINGS: 0</p>
+            <p class="portfolio-item" id="oct2024">OCT 2024 EARNINGS: 0</p>
             <button onclick="logout()">Logout</button>
         </div>
 <!-- Login Box -->
@@ -186,7 +186,7 @@
                                                  morningshift      :'completed',
                                                  afternoonshift    :'completed', 
                                                  nonworkingday     :'03-11-2024',
-                                                 oct-2024          :'86,541.12' },
+                                                 oct2024           :'86,541.12' },
 
             employee2: { username: 'shariqa',    password          : 'shariqa02',
 
@@ -204,7 +204,7 @@
                                                 morningshift       :'completed', 
                                                 afternoonshift     :'completed',
                                                 nonworkingday      :'03-11-2024' ,
-                                                oct-2024           :'38,225.88' },
+                                                oct2024            :'38,225.88' },
         };
 
         function login() {
@@ -253,7 +253,7 @@ if (role === 'admin' && username === adminCredentials.username && password === a
             document.getElementById('morningshift').innerText = 'Morning shift: ' + employee.morningshift;
             document.getElementById('afternoonshift').innerText = 'Afternoon shift: ' + employee.afternoonshift;
             document.getElementById('nonworkingday').innerText = 'Next Non Working Day: ' + employee.nonworkingday;
-            document.getElementById('oct-2024').innerText = 'OCT 2024 EARNINGS: ' + employee.oct-2024;
+            document.getElementById('oct2024').innerText = 'OCT 2024 EARNINGS: ' + employee.oct2024;
         }
 
         function logout() {
